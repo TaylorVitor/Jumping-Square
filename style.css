@@ -1,0 +1,170 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62%;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+.box-fundo {
+    width: 60%;
+    height: 90%;
+    background-color: black;
+    border-radius: 50px;
+    box-shadow: 0px 0px 40px #888;
+    overflow: hidden;
+}
+
+.box-fundo div {
+    position: absolute;
+}
+
+.borracha {
+    width: 30%;
+    height: 50%;
+    border-bottom: 16px solid white;
+    box-shadow: 0 10px 0 0 darkblue;
+    left: 35%;
+    animation: borrachaAni 2s infinite linear;
+}
+
+@keyframes borrachaAni {
+    0%,
+    20% {
+        border-radius: 0;
+        transform: translateY(0);
+    }
+
+    50%,
+    60% {
+        border-radius: 40% ;
+        transform: translateY(70%);
+    }
+
+    65%,
+    100% {
+        border-radius: 0;
+        transform: translateY(0);
+    }
+}
+
+.barras {
+    width: 2.5%;
+    height: 52%;
+    background: rgb(0, 36, 194);
+    border-radius: 10px 10px 0 0;
+    bottom: 33px;
+    transform-origin: bottom center;
+}
+
+.barra-esquerda {
+    left: 65%;
+    box-shadow: 1px 0 0 0px rgb(255, 255, 255);
+    animation: barraL 2s infinite linear;
+}
+
+@keyframes barraL {
+    0%,30% {
+        transform: rotateZ(0)
+    }
+
+    50%,65% {
+        transform: rotateZ(-2deg)
+    }
+
+    00%,100% {
+        transform: rotateZ(0)
+    }
+
+}
+
+.barra-direita {
+    right: 65%;
+    box-shadow: 1px 0 0 0px grey;
+    animation: barraR 2s infinite linear;
+}
+
+@keyframes barraR {
+    0%,30% {
+        transform: rotateZ(0)
+    }
+
+    50%,65% {
+        transform: rotateZ(2deg)
+    }
+
+    00%,100% {
+        transform: rotateZ(0)
+    }
+
+}
+
+.box-jump {
+    width: 10%;
+    aspect-ratio: 1;
+    background-color: darkblue;
+    border-radius: 15px;
+    box-shadow: 0 0px 0 5px red;
+    left: 44%;
+    margin-top: 10px;
+    animation: jumpAni 2s infinite linear;
+}
+
+@keyframes jumpAni {
+    0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(400px);
+      }
+
+      60% {
+        transform: translateY(390px);
+      }
+
+      70% {
+        transform: translateY(90px);
+      }
+
+      75% {
+        transform: translateY(20px);
+      }
+
+      80% {
+        transform: translateY(10px);
+      }
+
+      100% {
+        transform: rotate(90deg);
+      }
+      
+      0%,100% {
+        box-shadow: 0 0px 0 5px red;
+      }
+
+      40% {
+        box-shadow: 0 0px 0 5px white;
+      }
+
+      60% {
+        box-shadow: 0 0px 0 5px rgb(0, 204, 255);
+      }
+
+}
+
+@media(max-width: 700px) {
+    
+    body {
+        flex-direction: column;
+    }
+}
